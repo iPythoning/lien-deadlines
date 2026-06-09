@@ -3,6 +3,9 @@
 A free, statute-cited reference and calculator for U.S. mechanics/construction lien
 deadlines, plus an open dataset anyone can reuse.
 
+**▶ Live site: https://ipythoning.github.io/lien-deadlines/**
+&nbsp;&nbsp;·&nbsp;&nbsp;State guide: [California mechanics lien deadline](https://ipythoning.github.io/lien-deadlines/california-mechanics-lien-deadline.html)
+
 **Informational only — not legal advice.** See the disclaimer below and on the site.
 
 ## Coverage (v0.1)
@@ -20,6 +23,9 @@ is tied to the specific statute section that creates it.
 
 - **`index.html`** — single-file static site: state reference tables + a deadline
   calculator (calendar math on the standard statutory period). Zero dependencies.
+  → [live](https://ipythoning.github.io/lien-deadlines/)
+- **`california-mechanics-lien-deadline.html`** — deep statute-cited guide for the
+  California deadlines. → [live](https://ipythoning.github.io/lien-deadlines/california-mechanics-lien-deadline.html)
 - **`data/deadlines.json`** — canonical dataset, nested state → role → deadline.
 - **`data/deadlines.csv`** — flat one-row-per-deadline export.
 
