@@ -342,7 +342,7 @@ function renderTables(){
   var ns='lien-deadlines-ipy';
   function hit(k){new Image().src='https://abacus.jasoncameron.dev/hit/'+ns+'/'+k+'?_='+Date.now();}
   hit('live');
-  if(/(^|\.)github\./i.test(document.referrer))hit('from-github');
+  try{if(/(^|\.)github\.com$/i.test(new URL(document.referrer).hostname))hit('from-github');}catch(e){}
 })();
 </script>
 </body>
