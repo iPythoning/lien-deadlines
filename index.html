@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mechanics Lien Deadlines by State (CA · TX · FL) — Free Reference & Calculator</title>
+<meta name="description" content="Free, statute-cited mechanics lien deadline reference and calculator for California, Texas, and Florida. Preliminary notice, lien recording, and foreclosure deadlines by role. Informational only — not legal advice." />
+<link rel="canonical" href="https://lien-deadlines.pages.dev/" />
+<meta property="og:title" content="Mechanics Lien Deadlines by State — Free Reference & Calculator" />
+<meta property="og:description" content="Statute-cited lien deadlines for CA, TX, FL. Preliminary notice, recording, foreclosure — by contractor role. Free, open data, no signup." />
+<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is the deadline to record a mechanics lien in California?","acceptedAnswer":{"@type":"Answer","text":"90 days after completion of the work of improvement (Civil Code §8412). If the owner records a Notice of Completion, a subcontractor has 30 days and a direct contractor 60 days."}},
+    {"@type":"Question","name":"What is the deadline to file a lien affidavit in Texas?","acceptedAnswer":{"@type":"Answer","text":"For prime contracts on or after Jan 1, 2022: commercial projects, the 15th day of the 4th month after the last month of work; residential, the 15th day of the 3rd month (Property Code §53.052)."}},
+    {"@type":"Question","name":"How long do you have to file a Notice to Owner in Florida?","acceptedAnswer":{"@type":"Answer","text":"Within 45 days of first furnishing labor or materials, and before final payment (Fla. Stat. §713.06)."}}
+  ]
+}
+</script>
+<style>
+:root{
+  --paper:#faf8f5; --ink:#1a1714; --ink-soft:#5a5249; --line:#e2dcd2;
+  --accent:#c2410c; --accent-soft:#fdeee6; --card:#fffefb;
+  --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --serif:"Iowan Old Style",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.topbar{background:var(--ink);color:#f3ede3;font-size:13px;text-align:center;padding:8px 24px;letter-spacing:.01em}
+.topbar strong{color:#fff}
+header{border-bottom:2px solid var(--ink);padding:38px 0 30px}
+.brand{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.02em;display:flex;align-items:center;gap:9px}
+.brand .dot{width:9px;height:9px;background:var(--accent);display:inline-block;border-radius:1px;transform:rotate(45deg)}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.1rem,1.2rem+3.8vw,3.6rem);line-height:1.04;letter-spacing:-.02em;margin:18px 0 14px;max-width:16ch}
+.lede{font-size:clamp(1.05rem,1rem+.4vw,1.25rem);color:var(--ink-soft);max-width:60ch}
+.states-tag{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.states-tag span{font-family:var(--mono);font-size:12px;border:1px solid var(--line);padding:5px 11px;border-radius:2px;background:var(--card)}
+.states-tag .live{border-color:var(--accent);color:var(--accent)}
+nav.anchors{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--line)}
+nav.anchors .wrap{display:flex;overflow-x:auto}
+nav.anchors a{font-size:13px;font-weight:500;color:var(--ink);padding:14px 18px;white-space:nowrap;border-bottom:2px solid transparent}
+nav.anchors a:hover{text-decoration:none;border-bottom-color:var(--accent)}
+section{padding:54px 0;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin-bottom:12px}
+h2{font-family:var(--serif);font-size:clamp(1.6rem,1.2rem+1.6vw,2.4rem);font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+h3{font-size:1.15rem;font-weight:650;margin:0 0 4px}
+.section-intro{color:var(--ink-soft);max-width:62ch;margin-bottom:30px}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.calc-inputs{padding:30px;border-right:1px solid var(--line)}
+.calc-out{padding:30px;background:var(--accent-soft)}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+.field select,.field input{width:100%;font-family:var(--sans);font-size:15px;padding:10px 12px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink)}
+.field select:focus,.field input:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+.seg{display:flex;gap:8px}
+.seg button{flex:1;font-family:var(--sans);font-size:14px;padding:9px;border:1px solid var(--line);background:#fff;border-radius:4px;cursor:pointer;font-weight:500}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.result-item{padding:15px 0;border-bottom:1px solid #f0d9cc}
+.result-item:last-child{border-bottom:none}
+.result-item .rname{font-size:13px;font-weight:600;color:var(--ink-soft)}
+.result-item .rdate{font-family:var(--mono);font-size:1.5rem;font-weight:600;letter-spacing:-.01em;margin:2px 0}
+.result-item .rmeta{font-size:12px;color:var(--ink-soft)}
+.result-item .rstatute{font-family:var(--mono);font-size:11px;color:var(--accent)}
+.calc-note{font-size:12px;color:var(--ink-soft);padding:16px 30px;background:#fff7f2;border-top:1px solid #f0d9cc}
+.state-block{margin-bottom:42px}
+.state-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.state-head .code{font-family:var(--mono);font-size:13px;background:var(--ink);color:#fff;padding:3px 8px;border-radius:2px}
+.state-head .statute{font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-left:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+table caption{text-align:left;font-weight:650;padding:16px 0 8px;font-size:14px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);font-weight:600}
+td .period{font-family:var(--mono);font-weight:600;color:var(--accent);white-space:nowrap}
+td .stat{font-family:var(--mono);font-size:12px;color:var(--ink-soft)}
+td .notes{font-size:12.5px;color:var(--ink-soft);display:block;margin-top:3px}
+.data-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.dcard{border:1px solid var(--line);border-radius:6px;padding:24px;background:var(--card)}
+.dcard .fmt{font-family:var(--mono);font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.1em}
+.dcard h3{margin:8px 0 6px}
+.dcard p{font-size:13.5px;color:var(--ink-soft);margin-bottom:14px}
+.btn{display:inline-block;font-size:14px;font-weight:600;padding:9px 16px;border:1.5px solid var(--ink);border-radius:4px;color:var(--ink)}
+.btn:hover{background:var(--ink);color:#fff;text-decoration:none}
+.disclaimer{background:#fdf6f1;border:1px solid #f0d9cc;border-radius:6px;padding:28px}
+.disclaimer h3{color:var(--accent)}
+.disclaimer p{font-size:13.5px;color:var(--ink-soft);margin-top:8px}
+footer{padding:40px 0;font-size:13px;color:var(--ink-soft)}
+footer a{color:var(--ink-soft);text-decoration:underline}
+@media(max-width:720px){
+  .calc-grid{grid-template-columns:1fr}
+  .calc-inputs{border-right:none;border-bottom:1px solid var(--line)}
+  .data-cards{grid-template-columns:1fr}
+  .state-head .statute{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">⚖️ <strong>Informational reference only — not legal advice.</strong> Deadlines depend on your facts; always confirm with a licensed attorney.</div>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span> LIEN&nbsp;DEADLINES</div>
+    <h1>Mechanics lien deadlines, by state and by role.</h1>
+    <p class="lede">Statute-cited preliminary-notice, recording, and foreclosure deadlines for the states we cover — plus a calculator that turns your project dates into the dates that matter. Free, open data, no signup.</p>
+    <div class="states-tag">
+      <span class="live">CA · California</span>
+      <span class="live">TX · Texas</span>
+      <span class="live">FL · Florida</span>
+      <span>More states in progress</span>
+    </div>
+  </div>
+</header>
+
+<nav class="anchors">
+  <div class="wrap">
+    <a href="#calculator">Calculator</a>
+    <a href="#reference">State Reference</a>
+    <a href="#data">Open Data</a>
+    <a href="#disclaimer">Disclaimer</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="calculator">
+  <div class="eyebrow">Deadline Calculator</div>
+  <h2>Enter your project dates.</h2>
+  <p class="section-intro">Pick your state, your role, and the project type, then enter the trigger date. The calculator applies the standard statutory period — it does <strong>not</strong> account for weekends/holidays, notices recorded by others, tolling, or your specific contract. Treat every result as a date to verify, not a date to rely on.</p>
+
+  <div class="calc">
+    <div class="calc-grid">
+      <div class="calc-inputs">
+        <div class="field">
+          <label for="c-state">State</label>
+          <select id="c-state"></select>
+        </div>
+        <div class="field">
+          <label for="c-role">Your role</label>
+          <select id="c-role"></select>
+        </div>
+        <div class="field" id="c-ptype-field">
+          <label>Project type <span style="font-weight:400;color:var(--ink-soft)">(affects Texas only)</span></label>
+          <div class="seg" id="c-ptype">
+            <button type="button" data-v="commercial" aria-pressed="true">Commercial</button>
+            <button type="button" data-v="residential" aria-pressed="false">Residential</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="c-first">First furnished labor/materials</label>
+          <input type="date" id="c-first" />
+        </div>
+        <div class="field">
+          <label for="c-last">Last furnished / completion date</label>
+          <input type="date" id="c-last" />
+        </div>
+      </div>
+      <div class="calc-out" id="c-output">
+        <p style="color:var(--ink-soft);font-size:14px">Enter your dates to see deadlines.</p>
+      </div>
+    </div>
+    <div class="calc-note">Calendar math only. "15th day of the Nth month" rules (Texas) are computed from the month of the trigger date. Verify every date against the current statute and a licensed attorney before acting.</div>
+  </div>
+</section>
+
+<section id="reference">
+  <div class="eyebrow">State Reference</div>
+  <h2>The deadlines, with citations.</h2>
+  <p class="section-intro">Every period below is tied to the statute that creates it. These are the load-bearing dates in a private-works mechanics lien; missing one usually forfeits the remedy.</p>
+  <div id="reference-tables"></div>
+</section>
+
+<section id="data">
+  <div class="eyebrow">Open Data</div>
+  <h2>Take the dataset.</h2>
+  <p class="section-intro">The same data behind this page, as structured files. CC BY 4.0 — use it in your own tools, just keep the attribution and the disclaimer.</p>
+  <div class="data-cards">
+    <div class="dcard">
+      <div class="fmt">JSON</div>
+      <h3>deadlines.json</h3>
+      <p>Nested by state → role → deadline, with statute citations, trigger events, and notes. The canonical source.</p>
+      <a class="btn" href="data/deadlines.json" download>Download JSON</a>
+    </div>
+    <div class="dcard">
+      <div class="fmt">CSV</div>
+      <h3>deadlines.csv</h3>
+      <p>One row per state/role/deadline. Drop straight into a spreadsheet or BI tool.</p>
+      <a class="btn" href="data/deadlines.csv" download>Download CSV</a>
+    </div>
+  </div>
+</section>
+
+<section id="disclaimer">
+  <div class="eyebrow">Read This</div>
+  <h2>Disclaimer.</h2>
+  <div class="disclaimer">
+    <h3>This is not legal advice.</h3>
+    <p>This site and dataset are provided for general informational purposes only. Nothing here is legal advice, and using this site does not create an attorney-client relationship.</p>
+    <p>Mechanics lien deadlines turn on facts this tool cannot know: your exact tier in the contract chain, whether others have recorded notices, weekends and holidays, contract terms, tolling and exceptions, and statutory amendments. Statutes change. The calculator performs plain calendar arithmetic on the standard period — it does not judge which rule applies to your situation.</p>
+    <p>Before you rely on any date, notice requirement, or strategy, <strong>verify it against the current statute and consult a licensed attorney</strong> in the relevant state. We make no warranty as to accuracy or completeness, and accept no liability for reliance on this information.</p>
+    <p style="margin-top:14px;font-size:12px">Last verified: 2026-06-10 · Sources: California Civil Code §8000 et seq.; Texas Property Code Ch. 53; Florida Statutes Ch. 713.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Lien Deadlines</strong> — a free, open construction-lien deadline reference. Informational only · not legal advice · no signup.</p>
+    <p style="margin-top:8px">Open data under CC BY 4.0. Found an error in a citation? That matters — corrections welcome.</p>
+  </div>
+</footer>
+
+<script>
+let DATA=null;
+const $=s=>document.querySelector(s);
+let ptype='commercial';
+
+fetch('data/deadlines.json').then(r=>r.json()).then(d=>{DATA=d;initCalc();renderTables();}).catch(()=>{
+  $('#c-output').innerHTML='<p style="color:var(--accent)">Could not load dataset.</p>';
+});
+
+function initCalc(){
+  const st=$('#c-state');
+  DATA.states.forEach(s=>st.add(new Option(s.name,s.code)));
+  st.onchange=()=>{fillRoles();recompute();};
+  $('#c-role').onchange=recompute;
+  ['#c-first','#c-last'].forEach(id=>$(id).oninput=recompute);
+  document.querySelectorAll('#c-ptype button').forEach(b=>b.onclick=()=>{
+    ptype=b.dataset.v;
+    document.querySelectorAll('#c-ptype button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+    recompute();
+  });
+  fillRoles();
+}
+
+function curState(){return DATA.states.find(s=>s.code===$('#c-state').value);}
+function fillRoles(){
+  const r=$('#c-role');r.innerHTML='';
+  curState().roles.forEach(role=>r.add(new Option(role.label,role.role)));
+}
+
+function fmt(d){return d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});}
+function addDays(d,n){const x=new Date(d);x.setDate(x.getDate()+n);return x;}
+function nthMonth15(trigger,n){return new Date(trigger.getFullYear(),trigger.getMonth()+n,15);}
+
+function recompute(){
+  const state=curState();
+  const role=state.roles.find(r=>r.role===$('#c-role').value);
+  if(!role)return;
+  const first=$('#c-first').value?new Date($('#c-first').value+'T00:00:00'):null;
+  const last=$('#c-last').value?new Date($('#c-last').value+'T00:00:00'):null;
+  const rows=role.deadlines.map(dl=>{
+    let date=null;
+    const tr=dl.trigger||'';
+    const base=/first furnishing|month unpaid/.test(tr)?first:(/completion|final furnishing|month of last/.test(tr)?last:null);
+    if(dl.periodDays!=null && base)date=addDays(base,dl.periodDays);
+    if(state.code==='TX' && base){
+      if(dl.key==='monthly-notice')date=nthMonth15(base,3);
+      if(dl.key==='file-lien-affidavit')date=nthMonth15(base,ptype==='commercial'?4:3);
+      if(dl.key==='foreclose'){
+        const lastFile=nthMonth15(last||base,ptype==='commercial'?4:3);
+        date=new Date(lastFile.getFullYear()+1,lastFile.getMonth(),lastFile.getDate());
+      }
+    }
+    const recordingBased=state.code!=='TX' && /recording the claim|last day a claimant/.test(tr);
+    return {dl,date,recordingBased};
+  });
+  $('#c-output').innerHTML=rows.map(({dl,date,recordingBased})=>`
+    <div class="result-item">
+      <div class="rname">${dl.name}</div>
+      <div class="rdate">${recordingBased?'+ '+dl.period:(date?fmt(date):'— enter date —')}</div>
+      <div class="rmeta">${recordingBased?'measured from the day you record the lien':dl.period+' · '+(dl.trigger||'')}</div>
+      <div class="rstatute">${dl.statute}</div>
+    </div>`).join('') + '<p style="font-size:11.5px;color:var(--ink-soft);margin-top:14px">Informational estimate — calendar math only. Verify with a licensed attorney.</p>';
+}
+
+function renderTables(){
+  $('#reference-tables').innerHTML=DATA.states.map(s=>`
+    <div class="state-block">
+      <div class="state-head">
+        <span class="code">${s.code}</span>
+        <h3>${s.name}</h3>
+        <span class="statute">${s.statute}</span>
+      </div>
+      ${s.note?`<p style="font-size:12.5px;color:var(--ink-soft);margin:10px 0 0">${s.note}</p>`:''}
+      ${s.roles.map(role=>`
+        <table>
+          <caption>${role.label}</caption>
+          <thead><tr><th style="width:26%">Deadline</th><th style="width:16%">Period</th><th style="width:22%">Statute</th><th>Trigger &amp; notes</th></tr></thead>
+          <tbody>
+            ${role.deadlines.map(dl=>`<tr>
+              <td><strong>${dl.name}</strong></td>
+              <td><span class="period">${dl.period}</span></td>
+              <td><span class="stat">${dl.statute}</span></td>
+              <td>${dl.trigger||''}<span class="notes">${dl.notes||''}</span></td>
+            </tr>`).join('')}
+          </tbody>
+        </table>`).join('')}
+    </div>`).join('');
+}
+</script>
+</body>
+</html>

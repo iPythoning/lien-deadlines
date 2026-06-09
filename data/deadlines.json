@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "title": "U.S. Mechanics Lien Deadlines — Open Dataset",
+    "description": "Statutory mechanics/construction lien deadlines by state and role, with verbatim statute citations. Informational reference only — NOT legal advice.",
+    "version": "0.1.0",
+    "lastVerified": "2026-06-10",
+    "coverage": ["CA", "TX", "FL"],
+    "disclaimer": "This dataset is provided for general informational purposes only and does NOT constitute legal advice. Lien deadlines depend on facts (project type, your tier, notices recorded by others, weekends/holidays, contract terms) and statutes change. Many exceptions and tolling rules apply. Always verify against the current statute and consult a licensed attorney in the relevant state before relying on any date. No attorney-client relationship is created by use of this dataset.",
+    "license": "CC BY 4.0 — attribution: lien-deadlines open dataset",
+    "sources": [
+      "California Civil Code §8000 et seq. (leginfo.legislature.ca.gov)",
+      "Texas Property Code Chapter 53 (statutes.capitol.texas.gov)",
+      "Florida Statutes Chapter 713 (leg.state.fl.us)"
+    ]
+  },
+  "states": [
+    {
+      "code": "CA",
+      "name": "California",
+      "statute": "California Civil Code §8000 et seq. (private works)",
+      "deadlinesAreNonExtendable": true,
+      "roles": [
+        {
+          "role": "general-contractor",
+          "label": "Direct (prime) contractor",
+          "deadlines": [
+            {
+              "key": "preliminary-notice",
+              "name": "Preliminary Notice",
+              "period": "20 days",
+              "periodDays": 20,
+              "trigger": "first furnishing labor or materials",
+              "servedOn": "construction lender (if any)",
+              "statute": "Civil Code §8200",
+              "notes": "A late notice only reaches back 20 days from when it is served."
+            },
+            {
+              "key": "record-lien",
+              "name": "Record Claim of Lien",
+              "period": "60–90 days",
+              "periodDays": 90,
+              "trigger": "completion of the work of improvement",
+              "statute": "Civil Code §8412, §8414",
+              "notes": "90 days after completion. If the owner records a Notice of Completion/Cessation, a direct contractor has only 60 days."
+            },
+            {
+              "key": "foreclose",
+              "name": "Foreclosure Lawsuit",
+              "period": "90 days",
+              "periodDays": 90,
+              "trigger": "recording the claim of lien",
+              "statute": "Civil Code §8460",
+              "notes": "Cannot be tolled or extended."
+            }
+          ]
+        },
+        {
+          "role": "subcontractor",
+          "label": "Subcontractor / supplier",
+          "deadlines": [
+            {
+              "key": "preliminary-notice",
+              "name": "Preliminary Notice",
+              "period": "20 days",
+              "periodDays": 20,
+              "trigger": "first furnishing labor or materials",
+              "servedOn": "owner, prime contractor, and construction lender (if any)",
+              "statute": "Civil Code §8200, §8204",
+              "notes": "A late notice only reaches back 20 days from when it is served."
+            },
+            {
+              "key": "record-lien",
+              "name": "Record Claim of Lien",
+              "period": "30–90 days",
+              "periodDays": 90,
+              "trigger": "completion of the work of improvement",
+              "statute": "Civil Code §8412, §8414",
+              "notes": "90 days after completion. If the owner records a Notice of Completion/Cessation, a subcontractor has only 30 days."
+            },
+            {
+              "key": "foreclose",
+              "name": "Foreclosure Lawsuit",
+              "period": "90 days",
+              "periodDays": 90,
+              "trigger": "recording the claim of lien",
+              "statute": "Civil Code §8460",
+              "notes": "Cannot be tolled or extended."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TX",
+      "name": "Texas",
+      "statute": "Texas Property Code Chapter 53",
+      "note": "Deadlines below reflect the rules for prime contracts entered into on or after January 1, 2022.",
+      "roles": [
+        {
+          "role": "general-contractor",
+          "label": "Original (prime) contractor",
+          "deadlines": [
+            {
+              "key": "file-lien-affidavit",
+              "name": "File Lien Affidavit",
+              "period": "15th day of the 4th month (commercial) / 3rd month (residential)",
+              "periodDays": null,
+              "trigger": "month of last labor or materials furnished",
+              "statute": "Property Code §53.052",
+              "notes": "Original contractors do not send monthly pre-lien notices, but must record the affidavit by this deadline."
+            },
+            {
+              "key": "foreclose",
+              "name": "Foreclosure Lawsuit",
+              "period": "1 year",
+              "periodDays": 365,
+              "trigger": "last day a claimant could file the lien affidavit",
+              "statute": "Property Code §53.158",
+              "notes": "Reduced from 2 years to 1 year for projects on/after 2022-01-01. May be extended to 2 years only by written agreement with the current owner."
+            }
+          ]
+        },
+        {
+          "role": "subcontractor",
+          "label": "Subcontractor / supplier",
+          "deadlines": [
+            {
+              "key": "monthly-notice",
+              "name": "Monthly Pre-Lien Notice (Fund-Trapping Notice)",
+              "period": "15th day of the 3rd month",
+              "periodDays": null,
+              "trigger": "each month unpaid labor or materials furnished",
+              "servedOn": "owner and original contractor",
+              "statute": "Property Code §53.056",
+              "notes": "Send a separate notice for each unpaid month. The notice lets the owner trap funds owed to the general contractor."
+            },
+            {
+              "key": "file-lien-affidavit",
+              "name": "File Lien Affidavit",
+              "period": "15th day of the 4th month (commercial) / 3rd month (residential)",
+              "periodDays": null,
+              "trigger": "month of last labor or materials furnished",
+              "statute": "Property Code §53.052",
+              "notes": "Commercial: 15th day of the 4th calendar month. Residential: 15th day of the 3rd calendar month."
+            },
+            {
+              "key": "foreclose",
+              "name": "Foreclosure Lawsuit",
+              "period": "1 year",
+              "periodDays": 365,
+              "trigger": "last day a claimant could file the lien affidavit",
+              "statute": "Property Code §53.158",
+              "notes": "Reduced from 2 years to 1 year for projects on/after 2022-01-01."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FL",
+      "name": "Florida",
+      "statute": "Florida Statutes Chapter 713 (Construction Liens)",
+      "deadlinesAreStrict": true,
+      "roles": [
+        {
+          "role": "general-contractor",
+          "label": "Contractor in privity with owner",
+          "deadlines": [
+            {
+              "key": "record-lien",
+              "name": "Record Claim of Lien",
+              "period": "90 days",
+              "periodDays": 90,
+              "trigger": "final furnishing of labor or materials",
+              "statute": "Fla. Stat. §713.08",
+              "notes": "Warranty/punch-list/remedial work does NOT extend the 90-day clock."
+            },
+            {
+              "key": "foreclose",
+              "name": "Foreclosure Lawsuit",
+              "period": "1 year",
+              "periodDays": 365,
+              "trigger": "recording the claim of lien",
+              "statute": "Fla. Stat. §713.22",
+              "notes": "A Notice of Contest of Lien can shorten this to 60 days."
+            }
+          ]
+        },
+        {
+          "role": "subcontractor",
+          "label": "Subcontractor / supplier (not in privity)",
+          "deadlines": [
+            {
+              "key": "notice-to-owner",
+              "name": "Notice to Owner (NTO)",
+              "period": "45 days",
+              "periodDays": 45,
+              "trigger": "first furnishing labor or materials",
+              "servedOn": "owner (and contractor)",
+              "statute": "Fla. Stat. §713.06",
+              "notes": "Must be served within 45 days of first furnishing AND before the owner makes final payment. Missing the NTO forfeits lien rights."
+            },
+            {
+              "key": "record-lien",
+              "name": "Record Claim of Lien",
+              "period": "90 days",
+              "periodDays": 90,
+              "trigger": "final furnishing of labor or materials",
+              "statute": "Fla. Stat. §713.08",
+              "notes": "Warranty/punch-list/remedial work does NOT extend the 90-day clock."
+            },
+            {
+              "key": "foreclose",
+              "name": "Foreclosure Lawsuit",
+              "period": "1 year",
+              "periodDays": 365,
+              "trigger": "recording the claim of lien",
+              "statute": "Fla. Stat. §713.22",
+              "notes": "A Notice of Contest of Lien can shorten this to 60 days."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
