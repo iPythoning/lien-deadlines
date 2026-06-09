@@ -20,6 +20,30 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "U.S. Mechanics Lien Deadlines — Open Dataset",
+  "description": "Statutory mechanics/construction lien deadlines by state and role, with verbatim statute citations. Covers California (Civil Code §8000 et seq.), Texas (Property Code Ch. 53, post-2022), and Florida (Statutes Ch. 713) — preliminary/monthly notice, lien recording/affidavit, and foreclosure-suit deadlines for direct contractors and subcontractors/suppliers. Informational reference only — NOT legal advice.",
+  "url": "https://ipythoning.github.io/lien-deadlines/",
+  "version": "0.1.0",
+  "dateModified": "2026-06-10",
+  "isAccessibleForFree": true,
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {"@type": "Organization", "name": "lien-deadlines open dataset"},
+  "keywords": ["mechanics lien", "construction lien", "lien deadline", "preliminary notice", "notice to owner", "lien filing deadline", "California lien", "Texas lien", "Florida lien", "construction law"],
+  "spatialCoverage": [
+    {"@type": "Place", "name": "California, United States"},
+    {"@type": "Place", "name": "Texas, United States"},
+    {"@type": "Place", "name": "Florida, United States"}
+  ],
+  "distribution": [
+    {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://ipythoning.github.io/lien-deadlines/data/deadlines.json"},
+    {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://ipythoning.github.io/lien-deadlines/data/deadlines.csv"}
+  ]
+}
+</script>
 <style>
 :root{
   --paper:#faf8f5; --ink:#1a1714; --ink-soft:#5a5249; --line:#e2dcd2;
