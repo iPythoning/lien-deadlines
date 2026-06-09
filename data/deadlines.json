@@ -41,7 +41,8 @@
               "periodDays": 90,
               "trigger": "completion of the work of improvement",
               "statute": "Civil Code §8412, §8414",
-              "notes": "90 days after completion. If the owner records a Notice of Completion/Cessation, a direct contractor has only 60 days."
+              "conditional": { "days": 60, "label": "if the owner records a Notice of Completion/Cessation" },
+              "notes": "90 days after completion. If the owner records a Notice of Completion or Cessation, a direct contractor has only 60 days."
             },
             {
               "key": "foreclose",
@@ -50,7 +51,7 @@
               "periodDays": 90,
               "trigger": "recording the claim of lien",
               "statute": "Civil Code §8460",
-              "notes": "Cannot be tolled or extended."
+              "notes": "This period cannot be tolled or extended."
             }
           ]
         },
@@ -75,7 +76,8 @@
               "periodDays": 90,
               "trigger": "completion of the work of improvement",
               "statute": "Civil Code §8412, §8414",
-              "notes": "90 days after completion. If the owner records a Notice of Completion/Cessation, a subcontractor has only 30 days."
+              "conditional": { "days": 30, "label": "if the owner records a Notice of Completion/Cessation" },
+              "notes": "90 days after completion. If the owner records a Notice of Completion or Cessation, a subcontractor has only 30 days."
             },
             {
               "key": "foreclose",
@@ -84,7 +86,7 @@
               "periodDays": 90,
               "trigger": "recording the claim of lien",
               "statute": "Civil Code §8460",
-              "notes": "Cannot be tolled or extended."
+              "notes": "This period cannot be tolled or extended."
             }
           ]
         }
@@ -107,7 +109,7 @@
               "periodDays": null,
               "trigger": "month of last labor or materials furnished",
               "statute": "Property Code §53.052",
-              "notes": "Original contractors do not send monthly pre-lien notices, but must record the affidavit by this deadline."
+              "notes": "Original contractors are not required to send monthly pre-lien notices; the affidavit must still be recorded by this deadline."
             },
             {
               "key": "foreclose",
@@ -116,7 +118,7 @@
               "periodDays": 365,
               "trigger": "last day a claimant could file the lien affidavit",
               "statute": "Property Code §53.158",
-              "notes": "Reduced from 2 years to 1 year for projects on/after 2022-01-01. May be extended to 2 years only by written agreement with the current owner."
+              "notes": "Reduced from 2 years to 1 year for projects on or after 2022-01-01. The period may be extended to 2 years only by written agreement with the current owner."
             }
           ]
         },
@@ -132,7 +134,7 @@
               "trigger": "each month unpaid labor or materials furnished",
               "servedOn": "owner and original contractor",
               "statute": "Property Code §53.056",
-              "notes": "Send a separate notice for each unpaid month. The notice lets the owner trap funds owed to the general contractor."
+              "notes": "The statute contemplates a separate notice for each unpaid month; the notice allows the owner to trap funds otherwise owed to the general contractor."
             },
             {
               "key": "file-lien-affidavit",
@@ -150,7 +152,7 @@
               "periodDays": 365,
               "trigger": "last day a claimant could file the lien affidavit",
               "statute": "Property Code §53.158",
-              "notes": "Reduced from 2 years to 1 year for projects on/after 2022-01-01."
+              "notes": "Reduced from 2 years to 1 year for projects on or after 2022-01-01."
             }
           ]
         }
@@ -173,7 +175,7 @@
               "periodDays": 90,
               "trigger": "final furnishing of labor or materials",
               "statute": "Fla. Stat. §713.08",
-              "notes": "Warranty/punch-list/remedial work does NOT extend the 90-day clock."
+              "notes": "Warranty, punch-list, or remedial work does NOT extend the 90-day clock."
             },
             {
               "key": "foreclose",
@@ -182,7 +184,7 @@
               "periodDays": 365,
               "trigger": "recording the claim of lien",
               "statute": "Fla. Stat. §713.22",
-              "notes": "A Notice of Contest of Lien can shorten this to 60 days."
+              "notes": "A Notice of Contest of Lien recorded by the owner can shorten this period to 60 days."
             }
           ]
         },
@@ -198,7 +200,7 @@
               "trigger": "first furnishing labor or materials",
               "servedOn": "owner (and contractor)",
               "statute": "Fla. Stat. §713.06",
-              "notes": "Must be served within 45 days of first furnishing AND before the owner makes final payment. Missing the NTO forfeits lien rights."
+              "notes": "Service is required within 45 days of first furnishing and before the owner makes final payment; failure to serve the NTO forfeits lien rights."
             },
             {
               "key": "record-lien",
@@ -207,7 +209,7 @@
               "periodDays": 90,
               "trigger": "final furnishing of labor or materials",
               "statute": "Fla. Stat. §713.08",
-              "notes": "Warranty/punch-list/remedial work does NOT extend the 90-day clock."
+              "notes": "Warranty, punch-list, or remedial work does NOT extend the 90-day clock."
             },
             {
               "key": "foreclose",
@@ -216,7 +218,7 @@
               "periodDays": 365,
               "trigger": "recording the claim of lien",
               "statute": "Fla. Stat. §713.22",
-              "notes": "A Notice of Contest of Lien can shorten this to 60 days."
+              "notes": "A Notice of Contest of Lien recorded by the owner can shorten this period to 60 days."
             }
           ]
         }
