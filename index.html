@@ -332,5 +332,18 @@ function renderTables(){
     </div>`).join('');
 }
 </script>
+<!-- Privacy-friendly hit beacon: no cookies, no PII, no third-party account.
+     Closes the GitHub-Pages measurement blind spot (repo traffic API does not
+     count Pages hits). `live` = every page load; `from-github` = arrivals whose
+     referrer is a github.com link (e.g. the awesome-legal-data list entry). -->
+<script>
+(function(){
+  if(location.hostname!=='ipythoning.github.io')return;
+  var ns='lien-deadlines-ipy';
+  function hit(k){new Image().src='https://abacus.jasoncameron.dev/hit/'+ns+'/'+k+'?_='+Date.now();}
+  hit('live');
+  if(/(^|\.)github\./i.test(document.referrer))hit('from-github');
+})();
+</script>
 </body>
 </html>
